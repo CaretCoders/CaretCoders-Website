@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationPage, HomeSection } from '../types';
 import { Menu, X, ArrowUpRight, ChevronRight } from 'lucide-react';
-import logoImg from '../assets/images/caretcoders_logo.png';
 
 interface HeaderProps {
   currentPage: NavigationPage;
@@ -60,10 +59,9 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden bg-white shadow-sm border border-black/[0.08] p-1 flex items-center justify-center transition-transform group-hover:scale-105">
             <img 
-              src={logoImg} 
+              src="/caretcoders_logo.svg"
               alt="CaretCoders Logo" 
               className="w-full h-full object-contain block"
-              referrerPolicy="no-referrer"
             />
           </div>
           <div className="flex flex-col">
@@ -75,100 +73,19 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center space-x-1 font-normal text-[13px] text-[#1D1D1F]/70">
-          <button
-            onClick={() => handleNavClick('home')}
-            className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-              currentPage === 'home' && activeHomeSection === 'hero' 
-                ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' 
-                : ''
-            }`}
-          >
-            Overview
-          </button>
-
-          <button
-            onClick={() => handleSectionClick('products')}
-            className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-              currentPage === 'home' && activeHomeSection === 'products' 
-                ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' 
-                : ''
-            }`}
-          >
-            Products
-          </button>
-
-          <button
-            onClick={() => handleSectionClick('why-us')}
-            className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-              currentPage === 'home' && activeHomeSection === 'why-us' 
-                ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' 
-                : ''
-            }`}
-          >
-            Philosophy
-          </button>
-
-          <button
-            onClick={() => handleSectionClick('journey')}
-            className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-              currentPage === 'home' && activeHomeSection === 'journey' 
-                ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' 
-                : ''
-            }`}
-          >
-            Chronicle
-          </button>
-
-          <button
-            onClick={() => handleNavClick('blog')}
-            className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-              currentPage === 'blog' 
-                ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' 
-                : ''
-            }`}
-          >
-            Publications
-          </button>
-
-          <button
-            onClick={() => handleNavClick('careers')}
-            className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-              currentPage === 'careers' 
-                ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' 
-                : ''
-            }`}
-          >
-            Careers
-          </button>
-
-          <button
-            onClick={() => handleNavClick('docs')}
-            className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-              currentPage === 'docs' 
-                ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' 
-                : ''
-            }`}
-          >
-            API Docs
-          </button>
+          <button onClick={() => handleNavClick('home')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'home' && activeHomeSection === 'hero' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Overview</button>
+          <button onClick={() => handleSectionClick('products')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'home' && activeHomeSection === 'products' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Products</button>
+          <button onClick={() => handleSectionClick('why-us')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'home' && activeHomeSection === 'why-us' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Philosophy</button>
+          <button onClick={() => handleSectionClick('journey')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'home' && activeHomeSection === 'journey' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Chronicle</button>
+          <button onClick={() => handleNavClick('blog')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'blog' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Publications</button>
+          <button onClick={() => handleNavClick('careers')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'careers' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Careers</button>
+          <button onClick={() => handleNavClick('docs')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'docs' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>API Docs</button>
         </nav>
 
         {/* Action Button & Mobile Toggle */}
         <div className="flex items-center space-x-3">
-          <button
-            onClick={() => handleSectionClick('contact')}
-            className="apple-button-primary text-xs sm:text-[13px] px-3.5 sm:px-4 py-1.5 shadow-sm"
-          >
-            <span>Contact</span>
-            <ChevronRight className="w-3.5 h-3.5 ml-1 opacity-70" />
-          </button>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-1.5 rounded-lg text-[#1D1D1F] hover:bg-black/[0.05] transition-colors"
-            aria-label="Toggle menu"
-          >
+          <button onClick={() => handleSectionClick('contact')} className="apple-button-primary text-xs sm:text-[13px] px-3.5 sm:px-4 py-1.5 shadow-sm"><span>Contact</span><ChevronRight className="w-3.5 h-3.5 ml-1 opacity-70" /></button>
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-1.5 rounded-lg text-[#1D1D1F] hover:bg-black/[0.05] transition-colors" aria-label="Toggle menu">
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
@@ -178,65 +95,15 @@ export const Header: React.FC<HeaderProps> = ({
       {mobileMenuOpen && (
         <div className="lg:hidden bg-white/95 backdrop-blur-2xl border-b border-black/[0.08] px-6 py-6 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200 shadow-xl">
           <div className="flex flex-col space-y-2 text-base font-normal text-[#1D1D1F]">
-            <button
-              onClick={() => handleNavClick('home')}
-              className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"
-            >
-              <span>Overview</span>
-              <ChevronRight className="w-4 h-4 text-[#86868B]" />
-            </button>
-            <button
-              onClick={() => handleSectionClick('products')}
-              className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"
-            >
-              <span>Products & Ecosystem</span>
-              <ChevronRight className="w-4 h-4 text-[#86868B]" />
-            </button>
-            <button
-              onClick={() => handleSectionClick('why-us')}
-              className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"
-            >
-              <span>Engineering Philosophy</span>
-              <ChevronRight className="w-4 h-4 text-[#86868B]" />
-            </button>
-            <button
-              onClick={() => handleSectionClick('journey')}
-              className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"
-            >
-              <span>Startup Chronicle</span>
-              <ChevronRight className="w-4 h-4 text-[#86868B]" />
-            </button>
-            <button
-              onClick={() => handleNavClick('blog')}
-              className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"
-            >
-              <span>Publications & Papers</span>
-              <ChevronRight className="w-4 h-4 text-[#86868B]" />
-            </button>
-            <button
-              onClick={() => handleNavClick('careers')}
-              className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"
-            >
-              <span>Careers & Fellowships</span>
-              <ChevronRight className="w-4 h-4 text-[#86868B]" />
-            </button>
-            <button
-              onClick={() => handleNavClick('docs')}
-              className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"
-            >
-              <span>API Reference</span>
-              <ChevronRight className="w-4 h-4 text-[#86868B]" />
-            </button>
+            <button onClick={() => handleNavClick('home')} className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"><span>Overview</span><ChevronRight className="w-4 h-4 text-[#86868B]" /></button>
+            <button onClick={() => handleSectionClick('products')} className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"><span>Products & Ecosystem</span><ChevronRight className="w-4 h-4 text-[#86868B]" /></button>
+            <button onClick={() => handleSectionClick('why-us')} className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"><span>Engineering Philosophy</span><ChevronRight className="w-4 h-4 text-[#86868B]" /></button>
+            <button onClick={() => handleSectionClick('journey')} className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"><span>Startup Chronicle</span><ChevronRight className="w-4 h-4 text-[#86868B]" /></button>
+            <button onClick={() => handleNavClick('blog')} className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"><span>Publications & Papers</span><ChevronRight className="w-4 h-4 text-[#86868B]" /></button>
+            <button onClick={() => handleNavClick('careers')} className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"><span>Careers & Fellowships</span><ChevronRight className="w-4 h-4 text-[#86868B]" /></button>
+            <button onClick={() => handleNavClick('docs')} className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"><span>API Reference</span><ChevronRight className="w-4 h-4 text-[#86868B]" /></button>
           </div>
-
-          <div className="pt-3 border-t border-black/[0.06]">
-            <button
-              onClick={() => handleSectionClick('contact')}
-              className="w-full apple-button-primary py-3 text-xs font-medium"
-            >
-              <span>Initiate Institutional Inquiry</span>
-            </button>
-          </div>
+          <div className="pt-3 border-t border-black/[0.06]"><button onClick={() => handleSectionClick('contact')} className="w-full apple-button-primary py-3 text-xs font-medium"><span>Initiate Institutional Inquiry</span></button></div>
         </div>
       )}
     </header>
