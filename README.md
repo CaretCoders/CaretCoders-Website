@@ -1,20 +1,34 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Caretcoders Website
 
-# Run and deploy your AI Studio app
+> **Building ideas into working products.**
 
-This contains everything you need to run your app locally.
+This repository contains the official website of **Caretcoders LLP** — a young, ambitious technology company and problem-solving product studio.
 
-View your app in AI Studio: https://ai.studio/apps/0acd62af-8fca-4b0a-ad57-d635b4c91a5c
+We understand real-world problems, experiment with technology, and turn ideas into practical products.
 
-## Run Locally
+## What We Believe
 
-**Prerequisites:**  Node.js
+* Understand the problem first.
+* Learn by building.
+* Experiment, test, and improve.
+* Turn ideas into working products.
 
+## Tech
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Built with modern web technologies and continuously improved as Caretcoders evolves.
+
+## Development
+
+```bash
+git clone <repository-url>
+cd <repository-name>
+npm install
+npm run dev
+```
+
+## Caretcoders
+
+**Explore. Experiment. Build. Learn.**
+
+Website: https://caretcoders.com
+GitHub: https://github.com/CaretCoders
