@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationPage, HomeSection } from '../types';
 import { Menu, X, ArrowUpRight, ChevronRight } from 'lucide-react';
-import logoImg from '../assets/images/caretcoders_logo.png';
 
 interface HeaderProps {
   currentPage: NavigationPage;
@@ -21,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage, act
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
         <button onClick={() => handleNavClick('home')} className="flex items-center space-x-2.5 group text-left cursor-pointer focus:outline-none">
           <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden bg-white shadow-sm border border-black/[0.08] p-1 flex items-center justify-center transition-transform group-hover:scale-105">
-            <img src={logoImg} alt="CaretCoders Logo" className="w-full h-full object-contain block" />
+            <img src="/caretcoders_logo.png" alt="CaretCoders Logo" className="w-full h-full object-contain block" />
           </div>
           <div className="flex flex-col"><span className="font-semibold text-sm sm:text-base tracking-[-0.015em] text-[#1D1D1F] group-hover:text-black transition-colors">CaretCoders</span></div>
         </button>
