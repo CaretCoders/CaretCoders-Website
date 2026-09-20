@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationPage, HomeSection } from '../types';
 import { Menu, X, ChevronRight } from 'lucide-react';
+import logoImg from '../assets/images/caretcoders_logo.png';
 
 interface HeaderProps {
   currentPage: NavigationPage;
@@ -57,10 +58,9 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden bg-white shadow-sm border border-black/[0.08] p-1 flex items-center justify-center transition-transform group-hover:scale-105">
             <img
-              src="/caretcoders_logo.png"
+              src={logoImg}
               alt="CaretCoders Logo"
               className="w-full h-full object-contain block"
-              referrerPolicy="no-referrer"
             />
           </div>
           <div className="flex flex-col">
