@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-apple-display {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Geist", "Inter", "Helvetica Neue", sans-serif;
+  }
+  .font-apple-text {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Geist", "Inter", "Helvetica Neue", sans-serif;
+  }
+  .font-mono {
+    font-family: "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+:root {
+  --canvas-bg: #F5F5F7;
+  --surface-card: #FFFFFF;
+  --surface-secondary: #FBFBFD;
+  --text-primary: #1D1D1F;
+  --text-secondary: #6E6E73;
+  --text-tertiary: #86868B;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+  --border-strong: rgba(0, 0, 0, 0.12);
+  --accent-brand: #C25E38;
+  --accent-blue: #0071E3;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+/* Global Smooth & Clean Baseline */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #F5F5F7;
+  color: #1D1D1F;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Geist", "Inter", "Helvetica Neue", sans-serif;
+}
+
+/* Apple-style Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+/* Refined Apple-style Utility Classes */
+.apple-glass {
+  background-color: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.apple-glass-dark {
+  background-color: rgba(29, 29, 31, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.apple-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.apple-card:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.apple-button-primary {
+  background-color: #1D1D1F;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.apple-button-primary:hover {
+  background-color: #000000;
+  transform: scale(1.02);
+}
+.apple-button-primary:active {
+  transform: scale(0.98);
+}
+
+.apple-button-secondary {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #1D1D1F;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.apple-button-secondary:hover {
+  background-color: rgba(0, 0, 0, 0.09);
+  transform: scale(1.02);
+}
+.apple-button-secondary:active {
+  transform: scale(0.98);
+}
+
+.apple-link {
+  color: #0071E3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 400;
+  transition: color 0.15s ease;
+}
+.apple-link:hover {
+  color: #0077ED;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.apple-segmented-item {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
