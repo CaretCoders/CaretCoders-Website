@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { NavigationPage, HomeSection } from '../types';
 import { Menu, X, ChevronRight } from 'lucide-react';
 
-// Use the verified PNG from /public so the logo is served directly by Vite/GitHub Pages.
-const logoImg = `${import.meta.env.BASE_URL}caretcoders_logo.png`;
+// The site is deployed on the custom domain caretcoders.com.
+// Serve the verified PNG directly from /public at the domain root.
+const logoImg = '/caretcoders_logo.png';
 
 interface HeaderProps {
   currentPage: NavigationPage;
@@ -22,9 +23,7 @@ export const Header: React.FC<HeaderProps> = ({
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -46,67 +45,30 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white/80 backdrop-blur-xl border-b border-black/[0.08] shadow-[0_1px_8px_rgba(0,0,0,0.03)]'
-          : 'bg-[#F5F5F7]/85 backdrop-blur-md border-b border-black/[0.04]'
-      }`}
-    >
+    <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-xl border-b border-black/[0.08] shadow-[0_1px_8px_rgba(0,0,0,0.03)]' : 'bg-[#F5F5F7]/85 backdrop-blur-md border-b border-black/[0.04]'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
-        <button
-          onClick={() => handleNavClick('home')}
-          className="flex items-center space-x-2.5 group text-left cursor-pointer focus:outline-none"
-        >
+        <button onClick={() => handleNavClick('home')} className="flex items-center space-x-2.5 group text-left cursor-pointer focus:outline-none">
           <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl overflow-hidden bg-white shadow-sm border border-black/[0.08] p-1 flex items-center justify-center transition-transform group-hover:scale-105">
-            <img
-              src={logoImg}
-              alt="CaretCoders Logo"
-              className="w-full h-full object-contain block"
-            />
+            <img src={logoImg} alt="CaretCoders Logo" className="w-full h-full object-contain block" />
           </div>
           <div className="flex flex-col">
-            <span className="font-semibold text-sm sm:text-base tracking-[-0.015em] text-[#1D1D1F] group-hover:text-black transition-colors">
-              CaretCoders
-            </span>
+            <span className="font-semibold text-sm sm:text-base tracking-[-0.015em] text-[#1D1D1F] group-hover:text-black transition-colors">CaretCoders</span>
           </div>
         </button>
 
         <nav className="hidden lg:flex items-center space-x-1 font-normal text-[13px] text-[#1D1D1F]/70">
-          <button onClick={() => handleNavClick('home')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-            currentPage === 'home' && activeHomeSection === 'hero' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''
-          }`}>Overview</button>
-          <button onClick={() => handleSectionClick('products')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-            currentPage === 'home' && activeHomeSection === 'products' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''
-          }`}>Products</button>
-          <button onClick={() => handleSectionClick('why-us')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-            currentPage === 'home' && activeHomeSection === 'why-us' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''
-          }`}>Philosophy</button>
-          <button onClick={() => handleSectionClick('journey')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-            currentPage === 'home' && activeHomeSection === 'journey' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''
-          }`}>Chronicle</button>
-          <button onClick={() => handleNavClick('blog')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-            currentPage === 'blog' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''
-          }`}>Publications</button>
-          <button onClick={() => handleNavClick('careers')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-            currentPage === 'careers' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''
-          }`}>Careers</button>
-          <button onClick={() => handleNavClick('docs')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
-            currentPage === 'docs' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''
-          }`}>API Docs</button>
+          <button onClick={() => handleNavClick('home')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'home' && activeHomeSection === 'hero' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Overview</button>
+          <button onClick={() => handleSectionClick('products')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'home' && activeHomeSection === 'products' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Products</button>
+          <button onClick={() => handleSectionClick('why-us')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'home' && activeHomeSection === 'why-us' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Philosophy</button>
+          <button onClick={() => handleSectionClick('journey')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'home' && activeHomeSection === 'journey' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Chronicle</button>
+          <button onClick={() => handleNavClick('blog')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'blog' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Publications</button>
+          <button onClick={() => handleNavClick('careers')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'careers' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>Careers</button>
+          <button onClick={() => handleNavClick('docs')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${currentPage === 'docs' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''}`}>API Docs</button>
         </nav>
 
         <div className="flex items-center space-x-3">
-          <button onClick={() => handleSectionClick('contact')} className="apple-button-primary text-xs sm:text-[13px] px-3.5 sm:px-4 py-1.5 shadow-sm">
-            <span>Contact</span>
-            <ChevronRight className="w-3.5 h-3.5 ml-1 opacity-70" />
-          </button>
-
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-1.5 rounded-lg text-[#1D1D1F] hover:bg-black/[0.05] transition-colors"
-            aria-label="Toggle menu"
-          >
+          <button onClick={() => handleSectionClick('contact')} className="apple-button-primary text-xs sm:text-[13px] px-3.5 sm:px-4 py-1.5 shadow-sm"><span>Contact</span><ChevronRight className="w-3.5 h-3.5 ml-1 opacity-70" /></button>
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden p-1.5 rounded-lg text-[#1D1D1F] hover:bg-black/[0.05] transition-colors" aria-label="Toggle menu">
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
@@ -123,11 +85,7 @@ export const Header: React.FC<HeaderProps> = ({
             <button onClick={() => handleNavClick('careers')} className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"><span>Careers & Fellowships</span><ChevronRight className="w-4 h-4 text-[#86868B]" /></button>
             <button onClick={() => handleNavClick('docs')} className="text-left py-2 px-3 rounded-xl hover:bg-black/[0.04] transition-colors flex items-center justify-between"><span>API Reference</span><ChevronRight className="w-4 h-4 text-[#86868B]" /></button>
           </div>
-          <div className="pt-3 border-t border-black/[0.06]">
-            <button onClick={() => handleSectionClick('contact')} className="w-full apple-button-primary py-3 text-xs font-medium">
-              <span>Initiate Institutional Inquiry</span>
-            </button>
-          </div>
+          <div className="pt-3 border-t border-black/[0.06]"><button onClick={() => handleSectionClick('contact')} className="w-full apple-button-primary py-3 text-xs font-medium"><span>Initiate Institutional Inquiry</span></button></div>
         </div>
       )}
     </header>
