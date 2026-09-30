@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationPage, HomeSection } from '../types';
 import { Menu, X, ChevronRight } from 'lucide-react';
-
-// The site is deployed on the custom domain caretcoders.com.
-// Serve the verified PNG directly from /public at the domain root.
-const logoImg = '/caretcoders_logo.png';
+import logoImg from '../../assets/Sample Caretcoders logo design.svg';
 
 interface HeaderProps {
   currentPage: NavigationPage;
