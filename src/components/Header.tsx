@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { NavigationPage, HomeSection } from '../types';
 import { Menu, X, ChevronRight } from 'lucide-react';
-import logoImg from '../assets/images/caretcoders_logo.png';
+
+// Use the verified PNG from /public so the logo is served directly by Vite/GitHub Pages.
+const logoImg = `${import.meta.env.BASE_URL}caretcoders_logo.png`;
 
 interface HeaderProps {
   currentPage: NavigationPage;
@@ -89,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({
           <button onClick={() => handleNavClick('careers')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
             currentPage === 'careers' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''
           }`}>Careers</button>
-          <button onClick={() => handleNavClick('docs')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.05] ${
+          <button onClick={() => handleNavClick('docs')} className={`px-3 py-1.5 rounded-full transition-all hover:text-[#1D1D1F] hover:bg-black/[0.04] ${
             currentPage === 'docs' ? 'text-[#1D1D1F] font-medium bg-black/[0.05]' : ''
           }`}>API Docs</button>
         </nav>
